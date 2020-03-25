@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  datafetcher:
+    environment: ASPNETCORE_ENVIRONMENT=Development
+    ports: 83
+    image: ${DOCKER_REGISTRY-}datafetcher
+    build:
+      context: .
+      dockerfile: DataFetcher/Dockerfile
