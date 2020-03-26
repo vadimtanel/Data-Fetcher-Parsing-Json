@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataFetcher.Model;
 using DataFetcher.Provider;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,7 @@ namespace DataFetcher.Controllers
         }
 
         // GET: api/Products
+        [EnableCors("AllowAllOrigins")]
         [HttpGet]
         public async Task<IEnumerable<Product>> Get()
         {
